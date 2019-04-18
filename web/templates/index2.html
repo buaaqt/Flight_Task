@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主页_两地航班查询</title>
+<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="/static/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="text-align:center;height:310px;margin-top:50px">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <img class="logo" src="/static/images/5t2.png" width="550" height="220"/>
+                <div class="btn-group" style="margin-top:50px">
+                    <form role="form" action="/TurnToIndex1">
+                        <button type="submit" class="btn btn-default">航班编号查询</button>
+                    </form>
+                    <form role="form" action="/TurnToIndex2">
+	                    <button type="submit" class="btn btn-success">两地航班查询</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+         </div>
+            <div class="row">
+                <form role="form" action="/search_get" method="get" style="width:1140px">
+                    <div class="form-group" style="margin-top:20px">
+                        <label for="FlightFrom" style="float:left;margin-left:90px">出发地：</label>
+                        <input type="text" required="required" class="form-control" name="FlightFrom" id="FlightFrom" style="float:left;width:20%" placeholder="如：北京、首都国际">
+                        <label for="FlightTo" style="float:left;margin-left:30px">降落地：</label>
+                        <input type="text" required="required" class="form-control" name="FlightTo" id="FlightTo" style="float:left;width:20%" placeholder="如：上海、上海虹桥">
+                        <label for="FlightTime" style="float:left;margin-left:30px">出发时间：</label>
+                        <input type="date" class="form-control" name="FlightTime" id="FlightTime" style="float:left;width:20%">
+                    </div>
+                    <br/>
+                    <div class="form-group" style="margin-top:30px">
+                        <button type="submit" class="btn btn-default" style="float:center;font-family: arial,sans-serif;font-size: 14px;margin-left:520px">开始查询！</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+
+    <script>
+    $(document).ready(function () {
+        var time = new Date();
+        var day = ("0" + time.getDate()).slice(-2);
+        var month = ("0" + (time.getMonth() + 1)).slice(-2);
+        var today = time.getFullYear() + "-" + (month) + "-" + (day);
+        $('#FlightTime').val(today);
+    })
+    </script>
+</body>
+</html>

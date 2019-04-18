@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主页_航班编号查询</title>
+<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="/static/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="text-align:center;height:220px;margin-top:50px">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <img class="logo" src="/static/images/5t2.png" width="550" height="220"/>
+                <div class="btn-group" style="margin-top:50px">
+                    <form role="form" action="/TurnToIndex1">
+                        <button type="submit" class="btn btn-success">航班编号查询</button>
+                    </form>
+                    <form role="form" action="/TurnToIndex2">
+	                    <button type="submit" class="btn btn-default">两地航班查询</button>
+                    </form>
+                </div>
+                <form role="form" action="/search_FID" method="get">
+                    <div class="form-group" style="margin-top:20px">
+                        <label for="FlightId" style="float:left">航班号：</label>
+                        <input type="text" required="required" class="form-control" name="FlightId" id="FlightId" style="float:left;width:35%" placeholder="请输入航班号">
+                        <label for="FlightTime" style="float:left;margin-left:50px">出发时间：</label>
+                        <input type="date" class="form-control" name="FlightTime" id="FlightTime" style="float:left;width:35%">
+                    </div>
+                    <br/>
+                    <div class="form-group" style="margin-top:30px">
+                        <button type="submit" class="btn btn-default" style="float:center;font-family: arial,sans-serif;font-size: 14px">开始查询！</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function () {
+        var time = new Date();
+        var day = ("0" + time.getDate()).slice(-2);
+        var month = ("0" + (time.getMonth() + 1)).slice(-2);
+        var today = time.getFullYear() + "-" + (month) + "-" + (day);
+        $('#FlightTime').val(today);
+    })
+    </script>
+</body>
+
+</html>
