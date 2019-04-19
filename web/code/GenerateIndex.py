@@ -71,13 +71,17 @@ def create_airplane():
                 airline TEXT,
                 price TEXT,
                 delay TEXT,
-                delay_rate TEXT)''')
+                delay_rate TEXT,
+                dpt_airport TEXT,
+                arv_airport TEXT,
+                merge_from TEXT,
+                merge_to TEXT)''')
     '''
     csv_file = csv.reader(open('Data.csv', 'r'))
     i = 0
     for data in csv_file:
         print(type(data))
-        c.execute("INSERT INTO Model_airplane VALUES (?,?,?,?,?,?,?,?,?,?,?)",(i+1,data[i]['航班编号'],data[i]['出发地'],data[i]['目的地'],data[i]['出发时间'],data[i]['到达时间'],data[i]['飞行时间'],data[i]['航空公司'],data[i]['最低价格'],data[i]['禁运事项'],data[i]['AI预测延误概率']))
+        c.execute("INSERT INTO Model_airplane VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",(i+1,data[i]['航班编号'],data[i]['出发地'],data[i]['目的地'],data[i]['出发时间'],data[i]['到达时间'],data[i]['飞行时间'],data[i]['航空公司'],data[i]['最低价格'],data[i]['禁运事项'],data[i]['AI预测延误概率']))
         i=i+1
     '''
     with open('flight.txt', "r") as f:
@@ -94,9 +98,10 @@ def create_airplane():
         data[i]['出发时间']=list_time[1]+" "+list_time[2]
         list_time = data[i]['到达时间'].split(" ")
         data[i]['到达时间'] = list_time[1] + " " + list_time[2]
-        c.execute("INSERT INTO Model_airplane VALUES (?,?,?,?,?,?,?,?,?,?,?)", (
+        c.execute("INSERT INTO Model_airplane VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (
         i+1, data[i]['航班编号'].replace(" ",""), data[i]['出发地'].replace(" ",""), data[i]['目的地'].replace(" ",""), data[i]['出发时间'], data[i]['到达时间'], data[i]['飞行时间'],
-        data[i]['航空公司'].replace(" ",""), data[i]['最低价格'].replace(" ",""), "正常", data[i]['AI预测延误概率'].replace(" ","")))
+        data[i]['航空公司'].replace(" ",""), data[i]['最低价格'].replace(" ",""), "正常", data[i]['AI预测延误概率'].replace(" ",""),data[i]['出发机场'],data[i]['目的机场'],
+        data[i]['出发地'].replace(" ","")+data[i]['出发机场'].replace(" ",""),data[i]['目的地'].replace(" ","")+data[i]['目的机场'].replace(" ","")))
     conn.commit()
     conn.close()
 
@@ -112,10 +117,13 @@ def create_user_table():
                    plane_marked TEXT,
                    if_picked TEXT,
                    information TEXT,
-                   if_manage TEXT)''')
+                   if_manage TEXT,
+                   verify TEXT)''')
+    c.execute("INSERT INTO Model_user VALUES (?,?,?,?,?,?,?)",("admin","flight2019","",0,"",2,""))
     conn.commit()
     conn.close()
 
 create_airplane()
 calculate_time()
 create_user_table()
+

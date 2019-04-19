@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>两地间航班搜索结果</title>
+<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+<script type="text/javascript" src="/static/js/results.js"></script>
+<script type="text/javascript" src="/static/js/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="head-bg"></div>
+        <div class="row">
+            <div  class="col-md-12">
+                <img class="logo head-item" src="/static/images/5t2.png" width="200" height="80" style="float:left"/>
+                <div class="form-group">
+                    <div class="btn-group" style="margin-top:20px;float:left;margin-left:30px">
+                        <form role="form" action="/TurnToIndex1">
+                            <button type="submit" class="btn btn-default">航班编号查询</button>
+                        </form>
+                        <form role="form" action="/TurnToIndex2">
+                            <button type="submit" class="btn btn-success">两地航班查询</button>
+                        </form>
+                    </div>
+                </div>
+                <form role="form" action="/search_FFT" method="get" style="margin-top:20px">
+                    <div class="form-group">
+                        <label for="FlightFrom" style="float:left;margin-left:30px">出发地：</label>
+                        <input type="text" required="required" class="form-control" name="FlightFrom" id="FlightFrom" style="float:left;width:10%" placeholder="如：北京、北京首都" value={{FlightFrom}}>
+                        <label for="FlightTo" style="float:left;margin-left:30px">降落地：</label>
+                        <input type="text" required="required" class="form-control" name="FlightTo" id="FlightTo" style="float:left;width:10%" placeholder="如：上海、上海虹桥" value={{FlightTo}}>
+                        <label for="FlightTime" style="float:left;margin-left:30px">出发时间：</label>
+                        <input type="date" class="form-control" name="FlightTime" id="FlightTime" style="float:left;width:10%" value={{FlightTime}}>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default" style="float:center;font-family: arial,sans-serif;font-size: 14px;margin-left:30px">开始查询！</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-11">
+                <p class="resultState" style="float:left;margin-left:80px">您查询的航班信息如下，出发地：{{FlightFrom}}，降落地：{{FlightTo}}，日期：{{FlightTime}}</p>
+            </div>
+        </div>
+        <div class="row" style="margin-top:50px">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">航班号</th>
+                        <th scope="col">航空公司</th>
+                        <th scope="col">起飞时间</th>
+                        <th scope="col">出发地</th>
+						<th scope="col">出发机场</th>
+                        <th scope="col">计划到达</th>
+                        <th scope="col">降落地</th>
+						<th scope="col">降落机场</th>
+                        <th scope="col">最低价格</th>
+                        <th scope="col">状态</th>
+                        <th scope="col">详细信息</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--tbody之间可以写for-->
+                    {% if data %}
+                        {% for snippet in data %}
+                        <tr>
+                            <td>{{snippet.number}}</td>
+                            <td>{{snippet.airline}}</td>
+                            <td>{{snippet.depart_time}}</td>
+                            <td>{{snippet.departure}}</td>
+							<td>{{snippet.dpt_airport}}</td>
+                            <td>{{snippet.arrive_time}}</td>
+                            <td>{{snippet.arrival}}</td>
+							<td>{{snippet.arv_airport}}</td>
+                            <td>{{snippet.price}}</td>
+                            <td>{{snippet.delay}}</td>
+                            <td><a>查看</a></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="11">您所查询的起止地不存在当日对应航班！</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container footer">
+        <hr>
+        <div style="float:left;">北航计算机学院2019春软件工程</div>
+        <div style="float:right;">应用版权所有@Flight-D小组</div>
+    </div>
+
+</body>
+</html>

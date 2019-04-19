@@ -14,7 +14,10 @@ class airplane(models.Model):
     price=models.TextField()
     delay=models.TextField()
     delay_rate=models.TextField()
-    
+    dpt_airport=models.TextField(default="xx")
+    arv_airport=models.TextField(default="yy")
+    merge_from=models.TextField(default="xx")
+    merge_to=models.TextField(default="yy")    
 
 class user(models.Model):
     account=models.TextField(primary_key=True)
@@ -23,6 +26,7 @@ class user(models.Model):
     if_picked=models.TextField()
     information=models.TextField()
     if_manage=models.TextField()
+    verify=models.TextField(default="xxxx")
 
 
 #class History(models.Model):

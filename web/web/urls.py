@@ -26,8 +26,16 @@ urlpatterns = [
     url(r'^TurnToIndex2$', view.ChangeHP2),
     url(r'^TurnToIndex1$', view.ChangeHP),
     url(r'^search_FID$', view.search_by_ID),
-    
-    
+    url(r'^search_FFT$', view.search_by_FT),
+    url(r'^admin/', view.admin),
+    url(r'^admin_login$', view.admin_login),
+
+    url(r'^SendCode$',view.send_by_app),
+    url(r'^Register$',view.register_by_app),
+    url(r'^Login$',view.login_by_app),
+    url(r'^Search$',view.search_app),
+    url(r'^Marked$',view.marked_by_app),
+    url(r'^SearchMarked$',view.search_marked_app),
 
     #url(r'^query_help$', view.query_help),
 ]

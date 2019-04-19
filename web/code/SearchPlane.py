@@ -91,7 +91,7 @@ depart表示出发地，arrive目的地，date为出发日期，格式例如 201
 返回结果是列表里嵌套元组的结构，即列表每一个元素是字典，每一字典里是一个航班的信息
 '''
 def search_place(depart,arrive,date,flag,flag1,flag2):
-    qs=airplane.objects.filter(departure=depart,arrival=arrive).values()
+    qs=airplane.objects.filter(merge_from__contains=depart,merge_to__contains=arrive).values()
     data=[]
     for air in qs:
         data.append(air)
@@ -101,7 +101,7 @@ def search_place(depart,arrive,date,flag,flag1,flag2):
     for i in range(len(data)):
         #print(data[i])
         date_list=data[i]['depart_time'].split(" ")
-        list1=data_list[0].split("-")
+        list1=date_list[0].split("-")
         list2=date.split("-")
         if int(list1[0])==int(list2[0]) and int(list1[1])==int(list2[1]) and int(list1[2])==int(list2[2]):
             data_new.append(data[i])
@@ -196,6 +196,14 @@ def search_plane_part(plane_id,flag):
         qs=airplane.objects.filter(id=plane_id).values('delay')
     elif flag == 9:
         qs=airplane.objects.filter(id=plane_id).values('delay_rate')
+    elif flag == 10:
+        qs=airplane.objects.filter(id=plane_id).values('dpt_airport')
+    elif flag == 11:
+        qs=airplane.objects.filter(id=plane_id).values('arv_airport')
+    elif flag == 12:
+        qs=airplane.objects.filter(id=plane_id).values('merge_from')
+    elif flag == 13:
+        qs=airplane.objects.filter(id=plane_id).values('merge_to')
     else:
         print("没有这种查询方式")
     #print(qs)
@@ -251,8 +259,8 @@ def update_plane(plane_id,flag,new):
 11个参数都是字符串类型
 返回1代表操作成功
 '''
-def add_plane(dpt,arv,dpt_time,arv_time,spt,line,pie,dly,rate):
-    airplane.objects.create(departure=dpt,arrival=arv,depart_time=dpt_time,arrive_time=arv_time,spendtime=spt,airline=line,price=pie,delay=dly,delay_rate=rate)
+def add_plane(dpt,arv,dpt_time,arv_time,spt,line,pie,dly,rate,dpt_port,arv_port,mg_from,mg_to):
+    airplane.objects.create(departure=dpt,arrival=arv,depart_time=dpt_time,arrive_time=arv_time,spendtime=spt,airline=line,price=pie,delay=dly,delay_rate=rate,dpt_airport=dpt_port,arv_airport=arv_port,merge_from=mg_from,merge_to=mg_to)
     return 1
 
 '''

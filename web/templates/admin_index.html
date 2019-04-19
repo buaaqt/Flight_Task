@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的航班系统后台</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {#    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">#}
+</head>
+<body style="background-color: #f1f1f1">
+<nav class="nav navbar-inverse">
+    <div class="container-fluid">
+        <!-- Header -->
+        <div class="navbar-header">
+            <a class="navbar-brand">我的航班系统后台</a>
+        </div>
+        <!-- Items -->
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a>欢迎您，admin </a>
+            </li>
+            <li>
+                <a href="/admin/">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; 退出
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid col-sm-12" style="margin-top: 20px">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">
+                系统信息概览
+            </div>
+            <div>
+                <table class="table table-bordered table-striped">
+                    <p>截止目前，本系统的部分数据如下：</p>
+                    <thead>
+                        <th style="text-align: center">存储航班数据（条）</th>
+                        <th style="text-align: center">注册用户数</th>
+                        <th style="text-align: center">查询服务总次数</th>
+                    </thead>
+                    <tbody align="center">
+					{% for snippet in data %}
+                            <tr>
+                                <td>{{snippet.plane_num}}</td>
+                                <td>{{snippet.user_num}}</td>
+                                <td>-</td>
+                            </tr>
+					{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<div class="container-fluid col-sm-12" style="margin-top: 10px">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">
+                后台功能概览
+            </div>
+            <p>以下的这些管理操作对您开放。</p>
+            <div class="panel-body">
+                <form role="form" action="/TurnToIndex1">
+                    <button type="submit" class="btn btn-default" style="float:left;margin-left:20px">用户数据管理</button>
+                </form>
+                <form role="form">
+                    <button type="submit" class="btn btn-default" style="float:left;margin-left:20px" onclick="alert('此功能维护中！')">航班数据管理</button>
+                </form>
+                <form role="form">
+                    <button type="submit" class="btn btn-default" style="float:left;margin-left:20px" onclick="alert('此功能维护中！')">相关信息推送</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
+<div class="container footer">
+    <hr>
+    <div style="float:left;">北航计算机学院2019春软件工程</div>
+    <div style="float:right;">应用版权所有@Flight-D小组</div>
+</div>
+
+</body>
+</html>

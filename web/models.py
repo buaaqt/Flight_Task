@@ -3,23 +3,27 @@
 #   * Rearrange models' order
 #   * Make sure each model has one field with primary_key=True
 #   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+#   * Remove `managed = True` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
 
 class ModelAirplane(models.Model):
-    id = models.IntegerField(primary_key=True)  # AutoField?
-    number = models.TextField()
-    departure = models.TextField()
-    arrival = models.TextField()
-    depart_time = models.TextField()
-    arrive_time = models.TextField()
-    spendtime = models.TextField()
-    airline = models.TextField()
-    price = models.TextField()
-    embargo = models.TextField()
-    delay_rate = models.TextField()
+    id = models.IntegerField(primary_key=True, blank=True, null=True)  # AutoField?
+    number = models.TextField(blank=True, null=True)
+    departure = models.TextField(blank=True, null=True)
+    arrival = models.TextField(blank=True, null=True)
+    depart_time = models.TextField(blank=True, null=True)
+    arrive_time = models.TextField(blank=True, null=True)
+    spendtime = models.TextField(blank=True, null=True)
+    airline = models.TextField(blank=True, null=True)
+    price = models.TextField(blank=True, null=True)
+    delay = models.TextField(blank=True, null=True)
+    delay_rate = models.TextField(blank=True, null=True)
+    dpt_airport = models.TextField(blank=True, null=True)
+    arv_airport = models.TextField(blank=True, null=True)
+    merge_from = models.TextField(blank=True, null=True)
+    merge_to = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = True
@@ -27,15 +31,16 @@ class ModelAirplane(models.Model):
 
 
 class ModelUser(models.Model):
+    account = models.TextField(primary_key=True)
     password = models.TextField()
     plane_marked = models.TextField()
     if_picked = models.TextField()
     information = models.TextField()
     if_manage = models.TextField()
-    accout = models.TextField(primary_key=True)
+    verify = models.TextField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Model_user'
 
 
@@ -44,7 +49,7 @@ class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'auth_group'
 
 
@@ -54,7 +59,7 @@ class AuthGroupPermissions(models.Model):
     permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'auth_group_permissions'
         unique_together = (('group', 'permission'),)
 
@@ -66,7 +71,7 @@ class AuthPermission(models.Model):
     name = models.CharField(max_length=255)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'auth_permission'
         unique_together = (('content_type', 'codename'),)
 
@@ -85,7 +90,7 @@ class AuthUser(models.Model):
     last_name = models.CharField(max_length=150)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'auth_user'
 
 
@@ -95,7 +100,7 @@ class AuthUserGroups(models.Model):
     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'auth_user_groups'
         unique_together = (('user', 'group'),)
 
@@ -106,7 +111,7 @@ class AuthUserUserPermissions(models.Model):
     permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'auth_user_user_permissions'
         unique_together = (('user', 'permission'),)
 
@@ -122,7 +127,7 @@ class DjangoAdminLog(models.Model):
     action_flag = models.PositiveSmallIntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'django_admin_log'
 
 
@@ -132,7 +137,7 @@ class DjangoContentType(models.Model):
     model = models.CharField(max_length=100)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'django_content_type'
         unique_together = (('app_label', 'model'),)
 
@@ -144,7 +149,7 @@ class DjangoMigrations(models.Model):
     applied = models.DateTimeField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'django_migrations'
 
 
@@ -154,5 +159,6 @@ class DjangoSession(models.Model):
     expire_date = models.DateTimeField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'django_session'
+

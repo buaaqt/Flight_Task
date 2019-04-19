@@ -4,6 +4,7 @@ from Model.models import airplane
 from Model.models import user
 
 
+
 '''
 更新用户信息
 user_acc代表要更新的用户的账号
@@ -71,8 +72,8 @@ def search_user_part(user_acc,flag):
 参数都为字符串类型
 返回1成功
 '''
-def add_user(acc,pwd,marked,picked,ifm,manage):
-    user.objects.create(account=user_acc,password=pwd,plane_marked=marked,if_picked=picked,information=ifm,if_manage=manage)
+def add_user(acc,pwd,marked,picked,ifm,manage,code):
+    user.objects.create(account=user_acc,password=pwd,plane_marked=marked,if_picked=picked,information=ifm,if_manage=manage,verify=code)
     return 1
 
 '''
@@ -88,13 +89,15 @@ def delete_user(user_acc):
 '''
 user_cc为账号名，pwd是密码，两种都是字符串类型
 当户名user_acc还没有被注册返回1，当应被注册且密码与数据库一样并且是普通用户
-返回2，当应被注册且密码与数据库一样并且拥有管理权限返回3，与数据库不一样返回4
+返回2，当应被注册且密码与数据库一样并且拥有管理权限返回3，,当应被注册且密码与数据库一样并且是群主返回4
+与数据库不一样返回5
 '''
 def judge_user(user_acc,pwd):
     qs=user.objects.filter(account=user_acc).values()
     data=[]
     for u in qs:
         data.append(u)
+    #print(len(data))
     if len(data)>1:
         return 0
     elif len(data)==0:
@@ -105,23 +108,25 @@ def judge_user(user_acc,pwd):
             manage=data[0]['if_manage']
             if manage == "0":
                 return 2
-            else:
+            elif manage=="1":
                 return 3
+            else:
+                return 4
         else:
-            return 4
+            return 5
 
 '''
 用户注册时录入用户的账号密码
 acc为账号名，pwd为密码，manage为1代表用户注册的是拥有管理权限的账号，manage为0代表是
 用户注册的是不拥有管理权限的普通账号
 三个参数都是字符串类型\
-返回1注册成功,返回2失败（已被注册）
+返回1注册成功,返回0失败（已被注册）
 '''
 def record_user(acc,pwd,manage):
     tag=judge_user(acc,pwd)
     #如果账户名acc没有被注册过
     #print(acc)
-    #print(tag)
+    print(tag)
     if tag==1:
         user.objects.create(account=acc,password=pwd,if_manage=manage,plane_marked=" ",if_picked="0",information=" ")
         return 1
@@ -163,7 +168,7 @@ def record_user_plane(user_acc,plane_id):
     tag=judge_same(plane_str,plane_id)
     if tag==0:
         return 0
-    if plane_str!=" ":
+    if plane_str!=" " and plane_str!="":
         plane_str=plane_str+"-"+str(plane_id)
     else:
         plane_str=str(plane_id)
@@ -226,9 +231,10 @@ user_acc为用户账号名，类型为字符串
 def search_user_plane(user_acc):
     qs=user.objects.filter(account=user_acc).values('plane_marked')
     plane_tur=[]
+    #print(qs)
     for u in qs:
         plane_tur.append(u)
-    if len(plane_tur)==0:
+    if len(plane_tur)==1 and plane_tur[0]['plane_marked']=="":
         return plane_tur
     plane_str=plane_tur[0]['plane_marked']
     #print(plane_str)
