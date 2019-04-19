@@ -10,7 +10,7 @@ import os
 temp_path=os.getcwd()
 f_path=os.path.abspath(os.path.dirname(temp_path)+os.path.sep+".")
 '''
-sys.path.append(r'D:\web\web\code')
+sys.path.append(r'/data/wwwroot/web/web/code')
 from Model.models import airplane
 from Model.models import user
 import SearchPlane
