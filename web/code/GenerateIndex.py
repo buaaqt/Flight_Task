@@ -129,8 +129,22 @@ def create_user_table():
     conn.commit()
     conn.close()
 
+def record_delay_rate():
+    conn=sqlite3.connect("D:\web\web\APP.db")
+    c=conn.cursor()
+    csv_file=csv.reader(open('Data.csv','r'))
+    tag=0
+    for data in csv_file:
+        if tag==0:
+            tag=1
+            continue
+        #print(data)
+        c.execute("UPDATE Model_airplane SET delay_rate=? WHERE id=?",(data[10],int(data[0])))
+    conn.commit()
+    conn.close()
+                  
+
 create_airplane()
+record_delay_rate()
 calculate_time()
 create_user_table()
-
-

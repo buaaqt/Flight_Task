@@ -43,23 +43,23 @@
 <div class="container-fluid col-sm-12" style="margin-top: 10px">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-        <form role="form" action="/search_USERID" method="get">
+        <form role="form" action="/search_UID" method="get">
             <div class="form-group">
                 <label for="UserId" style="float:left">用户名：</label>
                 <input type="text" class="form-control" name="UserId" id="UserId" style="float:left;width:15%">
+                <label for="AdminId" style="float:left"></label>
+                <input type="hidden" class="form-control" name="AdminId" id="AdminId" value={{username}}>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-default" style="float:left;font-family: arial,sans-serif;font-size: 14px;margin-left:30px">开始查询！</button>
             </div>
         </form>
-        <form role="form" action="">
-            <button type="submit" class="btn btn-default" style="float:right">增添新客户</button>
-        </form>
+            <button type="submit" class="btn btn-default" style="float:right" onclick="alert('under maintenance')">增添新客户</button>
         <br/>
         {% if UserId %}
-            <p style="margin-top:25px">查询单用户，用户账户名：UserId</p>
+            <p style="margin-top:25px">查询单用户，用户账户名：{{UserId}}</p>
         {% else %}
-            <p style="margin-top:25px">查询用户：全体。共为您检索到__条用户数据。</p>
+            <p style="margin-top:25px">查询用户：全体客户（不含管理员）。共为您检索到{{usernumber}}条客户数据。</p>
         {% endif %}
     </div>
     <div class="col-sm-2"></div>
@@ -89,25 +89,28 @@
                     <td>{{snippet.character}}</td>
                     <td>{{snippet.marked_num}}</td>
 			        <td>
-                        <a class="fa fa-chevron-right" data-flag="1">展开 </a>
+                        {% if snippet.marked_num == "0" %}
+                        {% else %}
+                        <a class="fa fa-chevron-right" data-flag={{forloop.counter}}>展开/折叠 </a>
+                        {% endif %}
                         <a>删除用户</a>
                     </td>
 			    </tr>
 					{% for im in snippet.plane_im %}
-					<tr class="click1 success">
+					<tr class="click{{forloop.parentloop.counter}} success">
 						<th>航班编号</th>
 						<th>出发日期</th>
 						<th>是否设置接机人</th>
 						<th>接机人联系方式</th>
 						<th>操作</th>
 					</tr>
-					<tr class="click1 success">
+					<tr class="click{{forloop.parentloop.counter}} success">
 						<td>{{im.number}}</td>
 						<td>{{im.depart_time}}</td>
 						<td>{{snippet.if_picked}}</td>
 						<td>{{im.imformation}}</td>
 						<td>
-							<a class="fa fa-chevron-right" data-flag="1">编辑此条 </a>
+							<a>编辑此条</a>
 							<a>删除此条</a>
 						</td>
 					</tr>

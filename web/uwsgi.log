@@ -5739,3 +5739,213 @@ spawned uWSGI worker 4 (pid: 922, cores: 1)
 [pid: 920|app: 0|req: 216/593] 219.239.227.224 () {38 vars in 532 bytes} [Sun Apr 21 13:06:42 2019] GET /Login?account=test5&password=123 => generated 2118 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 117 bytes (1 switches on core 0)
 [pid: 920|app: 0|req: 217/594] 219.239.227.224 () {38 vars in 532 bytes} [Sun Apr 21 13:09:34 2019] GET /Login?account=test5&password=123 => generated 2118 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 117 bytes (1 switches on core 0)
 [pid: 920|app: 0|req: 218/595] 195.88.29.247 () {36 vars in 533 bytes} [Sun Apr 21 13:25:43 2019] GET / => generated 2747 bytes in 0 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 219/596] 219.239.227.224 () {38 vars in 532 bytes} [Sun Apr 21 14:03:00 2019] GET /Login?account=test5&password=123 => generated 2118 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 117 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 220/597] 219.239.227.224 () {38 vars in 572 bytes} [Sun Apr 21 14:03:24 2019] GET /SearchMarkedCancel?account=test5&plane_id=166&flag=0 => generated 1707 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 117 bytes (1 switches on core 0)
+[pid: 922|app: 0|req: 160/598] 219.239.227.224 () {38 vars in 572 bytes} [Sun Apr 21 14:03:25 2019] GET /SearchMarkedCancel?account=test5&plane_id=164&flag=0 => generated 1288 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 117 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 221/599] 219.239.227.224 () {38 vars in 572 bytes} [Sun Apr 21 14:03:25 2019] GET /SearchMarkedCancel?account=test5&plane_id=167&flag=0 => generated 868 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 116 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 222/600] 77.247.109.128 () {30 vars in 371 bytes} [Sun Apr 21 14:06:41 2019] HEAD /robots.txt => generated 77 bytes in 1 msecs (HTTP/1.0 404) 3 headers in 100 bytes (1 switches on core 0)
+4
+[pid: 920|app: 0|req: 223/601] 219.239.227.217 () {44 vars in 847 bytes} [Sun Apr 21 14:26:28 2019] GET /admin_login?username=admin&password=flight2019 => generated 3854 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 224/602] 219.239.227.217 () {48 vars in 930 bytes} [Sun Apr 21 14:26:35 2019] GET /search_UID?UserId=&AdminId= => generated 13837 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 225/603] 219.239.227.217 () {44 vars in 817 bytes} [Sun Apr 21 14:27:15 2019] GET /Login?account=test&password=123 => generated 42 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 115 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 226/604] 219.239.227.217 () {44 vars in 1027 bytes} [Sun Apr 21 14:27:31 2019] GET /SearchMarkPlane?departure=%E5%8C%97%E4%BA%AC&arrival=%E5%B9%BF%E5%B7%9E&number=0&date=2019-04-23&account=default&plane_id=default&flag=0 => generated 20084 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 118 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 227/605] 219.239.227.218 () {42 vars in 667 bytes} [Sun Apr 21 15:08:08 2019] GET / => generated 2747 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 921|app: 0|req: 116/606] 219.239.227.218 () {40 vars in 575 bytes} [Sun Apr 21 15:08:09 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 228/607] 219.239.227.218 () {44 vars in 723 bytes} [Sun Apr 21 15:08:12 2019] GET /admin/ => generated 1747 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 229/608] 219.239.227.218 () {40 vars in 575 bytes} [Sun Apr 21 15:08:12 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 230/609] 42.236.10.84 () {42 vars in 700 bytes} [Sun Apr 21 15:08:16 2019] GET / => generated 2747 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+1
+[pid: 920|app: 0|req: 231/610] 219.239.227.218 () {44 vars in 782 bytes} [Sun Apr 21 15:08:18 2019] GET /admin_login?username=a&password=a => generated 27 bytes in 16 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 922|app: 0|req: 161/611] 219.239.227.218 () {40 vars in 575 bytes} [Sun Apr 21 15:08:18 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+1
+[pid: 920|app: 0|req: 232/612] 219.239.227.218 () {42 vars in 732 bytes} [Sun Apr 21 15:08:20 2019] GET /admin_login?username=a&password=a => generated 27 bytes in 16 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 922|app: 0|req: 162/613] 219.239.227.218 () {40 vars in 575 bytes} [Sun Apr 21 15:08:21 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 233/614] 42.236.10.117 () {42 vars in 723 bytes} [Sun Apr 21 15:08:22 2019] GET /admin_login => generated 27 bytes in 11 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+1
+[pid: 920|app: 0|req: 234/615] 219.239.227.218 () {42 vars in 732 bytes} [Sun Apr 21 15:08:23 2019] GET /admin_login?username=a&password=a => generated 27 bytes in 16 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 922|app: 0|req: 163/616] 219.239.227.218 () {40 vars in 575 bytes} [Sun Apr 21 15:08:23 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 235/617] 42.236.10.114 () {42 vars in 699 bytes} [Sun Apr 21 15:08:24 2019] GET / => generated 2747 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 236/618] 219.239.227.218 () {40 vars in 636 bytes} [Sun Apr 21 15:08:28 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+4
+[pid: 920|app: 0|req: 237/619] 219.239.227.218 () {42 vars in 758 bytes} [Sun Apr 21 15:08:34 2019] GET /admin_login?username=admin&password=flight2019 => generated 3854 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 238/620] 219.239.227.218 () {40 vars in 575 bytes} [Sun Apr 21 15:08:34 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 918|app: 0|req: 104/621] 180.163.220.4 () {42 vars in 723 bytes} [Sun Apr 21 15:08:34 2019] GET /admin_login => generated 27 bytes in 14 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 239/622] 219.239.227.218 () {44 vars in 810 bytes} [Sun Apr 21 15:08:37 2019] GET /search_UID?UserId=&AdminId= => generated 3798 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 922|app: 0|req: 164/623] 219.239.227.218 () {40 vars in 575 bytes} [Sun Apr 21 15:08:37 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+4
+[pid: 920|app: 0|req: 240/624] 219.239.227.218 () {42 vars in 758 bytes} [Sun Apr 21 15:08:43 2019] GET /admin_login?username=admin&password=flight2019 => generated 3854 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 922|app: 0|req: 165/625] 42.236.10.75 () {42 vars in 753 bytes} [Sun Apr 21 15:08:43 2019] GET /search_UID?UserId=&AdminId= => generated 3948 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 921|app: 0|req: 117/626] 219.239.227.218 () {40 vars in 575 bytes} [Sun Apr 21 15:08:43 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 920|app: 0|req: 241/627] 219.239.227.218 () {42 vars in 667 bytes} [Sun Apr 21 15:08:49 2019] GET / => generated 2747 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 921|app: 0|req: 118/628] 219.239.227.218 () {40 vars in 575 bytes} [Sun Apr 21 15:08:50 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Apr 21 23:13:57 2019] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-23) on 16 April 2019 09:03:12
+os: Linux-2.6.32-754.10.1.el6.x86_64 #1 SMP Tue Jan 15 17:07:28 UTC 2019
+nodename: ecs-54ff-0017
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /data/wwwroot/web/web
+detected binary path: /data/env/pyweb/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /data/wwwroot/web/web/
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3871
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8997 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.5 (default, Apr 13 2019, 22:05:10)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-23)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x122c4a0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291680 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x122c4a0 pid: 17337 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 17337, cores: 1)
+spawned uWSGI worker 2 (pid: 17339, cores: 1)
+spawned uWSGI worker 3 (pid: 17340, cores: 1)
+spawned uWSGI worker 4 (pid: 17341, cores: 1)
+[pid: 17341|app: 0|req: 1/1] 219.239.227.247 () {44 vars in 749 bytes} [Sun Apr 21 15:14:09 2019] GET / => generated 2747 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[{'id': 1326, 'number': 'CA1820', 'departure': '南京', 'arrival': '北京', 'depart_time': '2019-04-23 08:40:00', 'arrive_time': '2019-04-23 10:40:00', 'spendtime': '120', 'airline': '中国国航', 'price': '1610', 'delay': '正常', 'delay_rate': '100%', 'dpt_airport': ' 禄口国际机场 ', 'arv_airport': ' 首都国际机场 ', 'merge_from': '南京禄口国际机场', 'merge_to': '北京首都国际机场'}]
+[pid: 17341|app: 0|req: 2/2] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:14:30 2019] GET /search_FID?FlightId=CA1820&FlightTime=2019-04-23 => generated 4688 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17340|app: 0|req: 1/3] 219.239.227.247 () {46 vars in 866 bytes} [Sun Apr 21 15:14:32 2019] GET /TurnToIndex2? => generated 3111 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17341|app: 0|req: 3/4] 219.239.227.247 () {46 vars in 985 bytes} [Sun Apr 21 15:14:36 2019] GET /search_FFT?FlightFrom=%E5%8C%97%E4%BA%AC&FlightTo=%E4%B8%8A%E6%B5%B7&FlightTime=2019-04-21 => generated 4616 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17340|app: 0|req: 2/5] 219.239.227.247 () {46 vars in 831 bytes} [Sun Apr 21 15:14:44 2019] GET /TurnToIndex1? => generated 2747 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17339|app: 0|req: 1/6] 219.239.227.247 () {46 vars in 831 bytes} [Sun Apr 21 15:14:45 2019] GET /TurnToIndex2? => generated 3111 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17341|app: 0|req: 4/7] 219.239.227.247 () {46 vars in 831 bytes} [Sun Apr 21 15:14:46 2019] GET /TurnToIndex1? => generated 2747 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17337|app: 0|req: 1/8] 219.239.227.247 () {46 vars in 818 bytes} [Sun Apr 21 15:14:47 2019] GET /admin/ => generated 1796 bytes in 19 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+5
+[pid: 17341|app: 0|req: 5/9] 219.239.227.247 () {46 vars in 880 bytes} [Sun Apr 21 15:14:52 2019] GET /admin_login?username=admin&password=12355 => generated 1865 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+4
+[pid: 17340|app: 0|req: 3/10] 219.239.227.247 () {46 vars in 925 bytes} [Sun Apr 21 15:14:57 2019] GET /admin_login?username=admin&password=flight2019 => generated 3724 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17341|app: 0|req: 6/11] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:15:03 2019] GET /search_UID?UserId=&AdminId=admin => generated 3590 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17341|app: 0|req: 7/12] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:15:16 2019] GET /search_UID?UserId=&AdminId=admin => generated 3590 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17340|app: 0|req: 4/13] 219.239.227.247 () {46 vars in 894 bytes} [Sun Apr 21 15:15:18 2019] GET /search_UID?UserId=asd&AdminId=admin => generated 3541 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17341|app: 0|req: 8/14] 219.239.227.247 () {46 vars in 849 bytes} [Sun Apr 21 15:15:24 2019] GET /search_UID? => generated 27 bytes in 28 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17340|app: 0|req: 5/15] 219.239.227.247 () {46 vars in 849 bytes} [Sun Apr 21 15:15:30 2019] GET /search_UID? => generated 27 bytes in 15 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17341|app: 0|req: 9/16] 219.239.227.247 () {46 vars in 849 bytes} [Sun Apr 21 15:15:34 2019] GET /search_UID? => generated 27 bytes in 11 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17341|app: 0|req: 10/17] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:16:30 2019] GET /search_UID?UserId=&AdminId=admin => generated 3590 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Apr 21 23:20:23 2019] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-23) on 16 April 2019 09:03:12
+os: Linux-2.6.32-754.10.1.el6.x86_64 #1 SMP Tue Jan 15 17:07:28 UTC 2019
+nodename: ecs-54ff-0017
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /data/wwwroot/web/web
+detected binary path: /data/env/pyweb/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /data/wwwroot/web/web/
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3871
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8997 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.5 (default, Apr 13 2019, 22:05:10)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-23)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd004a0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 291680 bytes (284 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xd004a0 pid: 17358 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 17358, cores: 1)
+spawned uWSGI worker 2 (pid: 17360, cores: 1)
+spawned uWSGI worker 3 (pid: 17361, cores: 1)
+spawned uWSGI worker 4 (pid: 17362, cores: 1)
+[pid: 17360|app: 0|req: 1/1] 219.239.227.247 () {48 vars in 933 bytes} [Sun Apr 21 15:20:35 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 40 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 1/2] 219.239.227.247 () {48 vars in 933 bytes} [Sun Apr 21 15:20:36 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 39 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 2/3] 219.239.227.247 () {44 vars in 749 bytes} [Sun Apr 21 15:20:38 2019] GET / => generated 2747 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17358|app: 0|req: 1/4] 219.239.227.247 () {46 vars in 805 bytes} [Sun Apr 21 15:20:40 2019] GET /admin/ => generated 1796 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+4
+[pid: 17360|app: 0|req: 3/5] 219.239.227.247 () {46 vars in 890 bytes} [Sun Apr 21 15:20:46 2019] GET /admin_login?username=admin&password=flight2019 => generated 3724 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 2/6] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:20:48 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 26 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 4/7] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:20:51 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17361|app: 0|req: 1/8] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:20:55 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 36 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 5/9] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:20:57 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 3/10] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:20:58 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 6/11] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:21:00 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17361|app: 0|req: 2/12] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:21:01 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 25 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 7/13] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:21:03 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 4/14] 219.239.227.247 () {46 vars in 894 bytes} [Sun Apr 21 15:21:04 2019] GET /search_UID?UserId=asd&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 8/15] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:21:07 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17361|app: 0|req: 3/16] 219.239.227.247 () {46 vars in 894 bytes} [Sun Apr 21 15:21:09 2019] GET /search_UID?UserId=asd&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 9/17] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:21:13 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 5/18] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:21:13 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 10/19] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:21:16 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 11/20] 219.239.227.247 () {46 vars in 894 bytes} [Sun Apr 21 15:21:29 2019] GET /search_UID?UserId=www&AdminId=admin => generated 3526 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 6/21] 219.239.227.247 () {46 vars in 895 bytes} [Sun Apr 21 15:21:31 2019] GET /search_UID?UserId=zs&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 12/22] 219.239.227.247 () {46 vars in 897 bytes} [Sun Apr 21 15:21:37 2019] GET /search_UID?UserId=aaa&AdminId=admin => generated 3526 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17361|app: 0|req: 4/23] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:21:39 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 13/24] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:21:40 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 7/25] 219.239.227.247 () {46 vars in 894 bytes} [Sun Apr 21 15:21:42 2019] GET /search_UID?UserId=asd&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 14/26] 219.239.227.247 () {46 vars in 894 bytes} [Sun Apr 21 15:21:44 2019] GET /search_UID?UserId=asd&AdminId=admin => generated 3526 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17361|app: 0|req: 5/27] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:21:48 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 15/28] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:21:54 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 8/29] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:21:57 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 16/30] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:22:00 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17358|app: 0|req: 2/31] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:22:01 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 18 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 17/32] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:22:03 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17361|app: 0|req: 6/33] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:22:03 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 14 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 18/34] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:22:07 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 9/35] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:22:08 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 19/36] 219.239.227.247 () {46 vars in 897 bytes} [Sun Apr 21 15:22:10 2019] GET /search_UID?UserId=asd&AdminId=admin => generated 3526 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17361|app: 0|req: 7/37] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:22:13 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 20/38] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:22:16 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 10/39] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:22:16 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 21/40] 219.239.227.247 () {48 vars in 928 bytes} [Sun Apr 21 15:25:27 2019] GET /search_UID?UserId=asd&AdminId=admin => generated 3526 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 11/41] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:25:30 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 22/42] 219.239.227.247 () {46 vars in 891 bytes} [Sun Apr 21 15:25:32 2019] GET /search_UID?UserId=&AdminId=admin => generated 3575 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17361|app: 0|req: 8/43] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:25:34 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 12 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 23/44] 219.239.227.247 () {46 vars in 897 bytes} [Sun Apr 21 15:25:42 2019] GET /search_UID?UserId=asd&AdminId=admin => generated 3526 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+1
+[pid: 17360|app: 0|req: 24/45] 106.39.190.91 () {52 vars in 1191 bytes} [Sun Apr 21 15:26:06 2019] GET /Register?account=m18811627539@163.com&password=1220&verifycode=&flag=0 => generated 36 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 115 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 12/46] 219.239.227.204 () {44 vars in 863 bytes} [Sun Apr 21 15:26:06 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 17358|app: 0|req: 3/47] 219.239.227.247 () {48 vars in 928 bytes} [Sun Apr 21 15:26:07 2019] GET /search_UID?UserId=aaa&AdminId=admin => generated 27 bytes in 24 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 25/48] 219.239.227.247 () {48 vars in 928 bytes} [Sun Apr 21 15:26:07 2019] GET /search_UID?UserId=aaa&AdminId=admin => generated 3526 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 13/49] 219.239.227.247 () {46 vars in 840 bytes} [Sun Apr 21 15:26:12 2019] GET /admin/ => generated 1796 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+4
+[pid: 17360|app: 0|req: 26/50] 219.239.227.247 () {48 vars in 921 bytes} [Sun Apr 21 15:26:29 2019] GET /admin_login?username=admin&password=flight2019 => generated 3724 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+4
+[pid: 17362|app: 0|req: 14/51] 219.239.227.247 () {48 vars in 921 bytes} [Sun Apr 21 15:26:30 2019] GET /admin_login?username=admin&password=flight2019 => generated 3724 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+4
+[pid: 17360|app: 0|req: 27/52] 219.239.227.247 () {48 vars in 921 bytes} [Sun Apr 21 15:26:30 2019] GET /admin_login?username=admin&password=flight2019 => generated 3724 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 28/53] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:26:32 2019] GET /search_UID?UserId=&AdminId=admin => generated 3959 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 29/54] 219.239.227.247 () {46 vars in 837 bytes} [Sun Apr 21 15:27:03 2019] GET /admin/ => generated 1796 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+1
+[pid: 17360|app: 0|req: 30/55] 219.239.227.204 () {46 vars in 1073 bytes} [Sun Apr 21 15:27:40 2019] GET /Register?account=123@1.com&password=1220&verifycode=&flag=0 => generated 36 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 115 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 15/56] 219.239.227.204 () {44 vars in 852 bytes} [Sun Apr 21 15:27:41 2019] GET /favicon.ico => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+4
+[pid: 17360|app: 0|req: 31/57] 219.239.227.247 () {46 vars in 890 bytes} [Sun Apr 21 15:27:58 2019] GET /admin_login?username=admin&password=flight2019 => generated 3724 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17362|app: 0|req: 16/58] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:28:00 2019] GET /search_UID?UserId=&AdminId=admin => generated 4332 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 32/59] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:28:05 2019] GET /search_UID?UserId=&AdminId=admin => generated 4332 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17361|app: 0|req: 9/60] 219.239.227.247 () {46 vars in 888 bytes} [Sun Apr 21 15:28:06 2019] GET /search_UID?UserId=&AdminId=admin => generated 27 bytes in 13 msecs (HTTP/1.1 500) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 33/61] 219.239.227.247 () {46 vars in 902 bytes} [Sun Apr 21 15:28:08 2019] GET /search_UID?UserId=&AdminId=admin => generated 4332 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 34/62] 219.239.227.247 () {46 vars in 894 bytes} [Sun Apr 21 15:28:10 2019] GET /search_UID?UserId=123&AdminId=admin => generated 3526 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 35/63] 219.239.227.247 () {46 vars in 913 bytes} [Sun Apr 21 15:28:18 2019] GET /search_UID?UserId=123%401.com&AdminId=admin => generated 3905 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 17360|app: 0|req: 36/64] 219.239.227.247 () {46 vars in 899 bytes} [Sun Apr 21 15:28:41 2019] GET /search_UID?UserId=&AdminId=admin => generated 4332 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+2
+[pid: 17360|app: 0|req: 37/65] 219.239.227.204 () {48 vars in 1104 bytes} [Sun Apr 21 15:30:27 2019] GET /Register?account=123@1.com&password=1220&verifycode=&flag=0 => generated 36 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 115 bytes (1 switches on core 0)

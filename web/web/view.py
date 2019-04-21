@@ -50,6 +50,7 @@ def admin(request):
     return render(request,'admin_login.html')
 
 def admin_login(request):
+    global username
     username = request.GET['username']
     password = request.GET['password']
 
@@ -64,27 +65,51 @@ def admin_login(request):
     tag=SearchUser.judge_user(username,password)
     print(tag)
     if tag==3 or tag==4:
-        return render(request,'admin_index.html',{'data':data})
+        return render(request,'admin_index.html',{'data':data,'username':username})
+    else:
+        return render(request, 'admin_login.html',{'error_msg':"登录失败，请确认账户具有管理员权限并且密码正确"})
     
 def search_by_UID(request):
     UserId = request.GET['UserId']
-    username = request.GET['AdminId']
-    data_user=user.objects.all()
-    list_user=[]
-    for u in data_user:
-        dict_user={}
-        dict_user['account']=u.account
-        if u.if_manage=="1":
-            dict_user['character']="管理员"
-        elif u.if_manage=="2":
-            dict_user['character']="群主"
-        else:
-            dict_user['character']="用户"
-        data_plane=SearchUser.search_user_plane(u.account)
-        dict_user['marked_num']=str(len(data_plane))
-        dict_user['plane_im']=data_plane
-        list_user.append(dict_user)
-    return render(request,'admin_user.html',{'UserId':UserId,'username':username,'data':list_user})
+    if UserId=="":
+        data_user=user.objects.all()
+        list_user=[]
+        for u in data_user:
+            dict_user={}
+            dict_user['account']=u.account
+            if u.if_manage=="1":
+                continue
+            elif u.if_manage=="2":
+                continue
+            else:
+                dict_user['character']="用户"
+            data_plane=SearchUser.search_user_plane(u.account)
+            dict_user['marked_num']=str(len(data_plane))
+            dict_user['plane_im']=data_plane
+            dict_user['if_picked']=u.if_picked
+            dict_user['information']=u.information
+            list_user.append(dict_user)
+    else:
+        list_user=[]
+        data_user=user.objects.filter(account=UserId).values()
+        for u in data_user:
+            dict_user={}
+            dict_user['account']=u['account']
+            if u['if_manage']=="1":
+                continue
+            elif u['if_manage']=="2":
+                continue
+            else:
+                dict_user['character']="用户"
+            data_plane=SearchUser.search_user_plane(u['account'])
+            dict_user['marked_num']=str(len(data_plane))
+            dict_user['plane_im']=data_plane
+            dict_user['if_picked']=u['if_picked']
+            dict_user['information']=u['information']
+            list_user.append(dict_user)
+    
+    usernumber=len(list_user)
+    return render(request,'admin_user.html',{'UserId':UserId,'username':username,'data':list_user,'usernumber':usernumber})
 
 
 def register_by_app(request):
@@ -264,7 +289,7 @@ def marked_by_app(request):
         response=json.dumps(state)
         return HttpResponse(response)
 '''
- 
+
 def searchmarked_cancel(request):
     if(request.method=='GET'):
         account=unquote(request.GET.get('account',""),encoding="utf-8")
@@ -296,7 +321,9 @@ def searchmarked_cancel(request):
         state['data']=data1
         
         response=json.dumps(state,ensure_ascii=False)
-        return HttpResponse(response,content_type='application/json; charset=utf-8')        
+        return HttpResponse(response,content_type='application/json; charset=utf-8')
+        
+        
     
             
         
