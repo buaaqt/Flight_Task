@@ -7,7 +7,7 @@ import csv
 '''
 def calculate_time():
     month_day=[31,28,31,30,31,30,31,31,30,31,30,31]
-    conn = sqlite3.connect("D:\web\web\APP.db")
+    conn = sqlite3.connect("/data/wwwroot/web/web/APP.db")
     c = conn.cursor()
     c.execute('SELECT id FROM Model_airplane ORDER BY id DESC LIMIT 1')
     data = c.fetchone()
@@ -57,7 +57,7 @@ def calculate_time():
 
 #建航班信息表
 def create_airplane():
-    conn=sqlite3.connect("D:\web\web\APP.db")
+    conn=sqlite3.connect("/data/wwwroot/web/web/APP.db")
     c=conn.cursor()
     c.execute('''DROP TABLE IF EXISTS Model_airplane''')
     c.execute('''CREATE TABLE Model_airplane
@@ -84,31 +84,37 @@ def create_airplane():
         c.execute("INSERT INTO Model_airplane VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",(i+1,data[i]['航班编号'],data[i]['出发地'],data[i]['目的地'],data[i]['出发时间'],data[i]['到达时间'],data[i]['飞行时间'],data[i]['航空公司'],data[i]['最低价格'],data[i]['禁运事项'],data[i]['AI预测延误概率']))
         i=i+1
     '''
-    with open('flight.txt', "r") as f:
-        f.seek(0, 0)
-        data_str = f.read()
-        data_str = data_str.replace('\n', '')
-        #data_str = data_str.replace(' ', '')
-        string="]\n["
-        data_str=data_str.replace(string,",")
-        data = list(eval(data_str))
-        length = len(data)
-    for i in range(length):
-        list_time=data[i]['出发时间'].split(" ")
-        data[i]['出发时间']=list_time[1]+" "+list_time[2]
-        list_time = data[i]['到达时间'].split(" ")
-        data[i]['到达时间'] = list_time[1] + " " + list_time[2]
-        c.execute("INSERT INTO Model_airplane VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (
-        i+1, data[i]['航班编号'].replace(" ",""), data[i]['出发地'].replace(" ",""), data[i]['目的地'].replace(" ",""), data[i]['出发时间'], data[i]['到达时间'], data[i]['飞行时间'],
-        data[i]['航空公司'].replace(" ",""), data[i]['最低价格'].replace(" ",""), "正常", data[i]['AI预测延误概率'].replace(" ",""),data[i]['出发机场'],data[i]['目的机场'],
-        data[i]['出发地'].replace(" ","")+data[i]['出发机场'].replace(" ",""),data[i]['目的地'].replace(" ","")+data[i]['目的机场'].replace(" ","")))
+    count=1
+    for j in range(1,8):
+        txt_string="flight"+str(j)+".txt"
+        print(j)
+        with open(txt_string, "r") as f:
+            f.seek(0, 0)
+            data_str = f.read()
+            data_str = data_str.replace('\n', '')
+            #data_str = data_str.replace(' ', '')
+            string="]["
+            data_str=data_str.replace(string,",")
+            data = list(eval(data_str))
+            length = len(data)
+            #print(data)
+        for i in range(length):
+            list_time=[]
+            #print(data[i])
+            list_time=data[i]['出发时间'].split(" ")
+            #print(list_time)
+            data[i]['出发时间']=list_time[1]+" "+list_time[2]
+            list_time = data[i]['到达时间'].split(" ")
+            #print(list_time)
+            data[i]['到达时间'] = list_time[1] + " " + list_time[2]
+            c.execute("INSERT INTO Model_airplane VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(count, data[i]['航班编号'].replace(" ",""), data[i]['出发地'].replace(" ",""), data[i]['目的地'].replace(" ",""), data[i]['出发时间'], data[i]['到达时间'], data[i]['飞行时间'],data[i]['航空公司'].replace(" ",""), data[i]['最低价格'].replace(" ",""), "正常", data[i]['AI预测延误概率'].replace(" ",""),data[i]['出发机场'],data[i]['目的机场'],data[i]['出发地'].replace(" ","")+data[i]['出发机场'].replace(" ",""),data[i]['目的地'].replace(" ","")+data[i]['目的机场'].replace(" ","")))
+            count=1+count
     conn.commit()
     conn.close()
 
-
 #建用户信息表
 def create_user_table():
-    conn = sqlite3.connect("D:\web\web\APP.db")
+    conn = sqlite3.connect("/data/wwwroot/web/web/APP.db")
     c=conn.cursor()
     c.execute('''DROP TABLE IF EXISTS Model_user''')
     c.execute('''CREATE TABLE Model_user
@@ -126,4 +132,5 @@ def create_user_table():
 create_airplane()
 calculate_time()
 create_user_table()
+
 

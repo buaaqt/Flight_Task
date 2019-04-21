@@ -189,7 +189,7 @@ def cancel_marked(user_acc,plane_id):
         data.append(u)
     if len(data)!=1:
         return 0
-    plane_str=data[0].plane_marked
+    plane_str=data[0]['plane_marked']
     string=plane_str.split("-")
     tag=0
     for i in range(len(string)):
@@ -234,8 +234,8 @@ def search_user_plane(user_acc):
     #print(qs)
     for u in qs:
         plane_tur.append(u)
-    if len(plane_tur)==1 and plane_tur[0]['plane_marked']=="":
-        return plane_tur
+    if len(plane_tur)==1 and (plane_tur[0]['plane_marked']=="" or plane_tur[0]['plane_marked']==" "):
+        return []
     plane_str=plane_tur[0]['plane_marked']
     #print(plane_str)
     plane_num_list=plane_str.split("-")

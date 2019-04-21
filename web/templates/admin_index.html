@@ -18,7 +18,7 @@
         <!-- Items -->
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a>欢迎您，admin </a>
+                <a>欢迎您，{{username}} </a>
             </li>
             <li>
                 <a href="/admin/">
@@ -68,8 +68,12 @@
             </div>
             <p>以下的这些管理操作对您开放。</p>
             <div class="panel-body">
-                <form role="form" action="/TurnToIndex1">
-                    <button type="submit" class="btn btn-default" style="float:left;margin-left:20px">用户数据管理</button>
+                <form role="form" action="/search_UID" method="get">
+                        <label for="UserId" style="float:left"></label>
+                        <input type="hidden" class="form-control" name="UserId" id="UserId" value="">
+                        <label for="AdminId" style="float:left"></label>
+                        <input type="hidden" class="form-control" name="AdminId" id="AdminId" value={{username}}>
+                        <button type="submit" class="btn btn-default" style="float:left;margin-left:20px">用户数据管理</button>
                 </form>
                 <form role="form">
                     <button type="submit" class="btn btn-default" style="float:left;margin-left:20px" onclick="alert('此功能维护中！')">航班数据管理</button>

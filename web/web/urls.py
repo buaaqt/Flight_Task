@@ -29,13 +29,13 @@ urlpatterns = [
     url(r'^search_FFT$', view.search_by_FT),
     url(r'^admin/', view.admin),
     url(r'^admin_login$', view.admin_login),
+    url(r'^search_UID$', view.search_by_UID),
+    
 
-    url(r'^SendCode$',view.send_by_app),
     url(r'^Register$',view.register_by_app),
     url(r'^Login$',view.login_by_app),
-    url(r'^Search$',view.search_app),
-    url(r'^Marked$',view.marked_by_app),
-    url(r'^SearchMarked$',view.search_marked_app),
+    url(r'^SearchMarkPlane$',view.search_mark_plane),
+    url(r'^SearchMarkedCancel$',view.searchmarked_cancel),
 
     #url(r'^query_help$', view.query_help),
 ]

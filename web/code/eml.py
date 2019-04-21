@@ -15,7 +15,7 @@ def SendVerifyCode(account):
 
         random.seed(time.time())
         code=str(random.randint(1000,9999))
-        message = MIMEText('Verify code: '+code, 'plain', 'utf-8')
+        message = MIMEText('Just now we received your application for register, this is your Verify Code: '+code, 'plain', 'utf-8')
         message['From'] = 'Airplane'
         message['To'] = 'Dear Guest'
 

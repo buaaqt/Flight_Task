@@ -30,7 +30,7 @@
                 <form role="form" action="/search_FID" method="get" style="margin-top:20px">
                     <div class="form-group">
                         <label for="FlightId" style="float:left;margin-left:30px">航班号：</label>
-                        <input type="text" class="form-control" name="FlightId" id="FlightId" style="float:left;width:15%" value={{FlightId}}>
+                        <input type="text" required="required" class="form-control" name="FlightId" id="FlightId" style="float:left;width:15%" value={{FlightId}}>
                         <label for="FlightTime" style="float:left;margin-left:30px">出发时间：</label>
                         <input type="date" class="form-control" name="FlightTime" id="FlightTime" style="float:left;width:15%" value={{FlightTime}}>
                     </div>
@@ -56,8 +56,10 @@
                         <th scope="col">航空公司</th>
                         <th scope="col">起飞时间</th>
                         <th scope="col">出发地</th>
+						<th scope="col">出发机场</th>
                         <th scope="col">计划到达</th>
                         <th scope="col">降落地</th>
+						<th scope="col">降落机场</th>
                         <th scope="col">最低价格</th>
                         <th scope="col">状态</th>
                         <th scope="col">详细信息</th>
@@ -65,19 +67,27 @@
                     </thead>
                     <tbody>
                     <!--tbody之间可以写for-->
-					{% for snippet in data %}
-                    <tr>
-                        <td>{{snippet.number}}</td>
-                        <th scope="col">{{snippet.airline}}</th>
-                        <th scope="col">{{snippet.depart_time}}</th>
-                        <th scope="col">{{snippet.departure}}</th>
-                        <th scope="col">{{snippet.arrive_time}}</th>
-                        <th scope="col">{{snippet.arrival}}</th>
-                        <th scope="col">{{snippet.price}}</th>
-                        <th scope="col">{{snippet.delay}}</th>
-                        <td><a>查看</a></td>
-                    </tr>
-					{% endfor %}
+                    {% if data %}
+                        {% for snippet in data %}
+                        <tr>
+                            <td>{{snippet.number}}</td>
+                            <td>{{snippet.airline}}</td>
+                            <td>{{snippet.depart_time}}</td>
+                            <td>{{snippet.departure}}</td>
+							<td>{{snippet.dpt_airport}}</td>
+                            <td>{{snippet.arrive_time}}</td>
+                            <td>{{snippet.arrival}}</td>
+							<td>{{snippet.arv_airport}}</td>
+                            <td>{{snippet.price}}</td>
+                            <td>{{snippet.delay}}</td>
+                            <td><a>查看</a></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="11">您所查询的航班号不存在当日对应航班！</td>
+                        </tr>
+                    {% endif %}
                     </tbody>
                 </table>
             </div>
@@ -85,7 +95,7 @@
     </div>
     <div class="container footer">
         <hr>
-        <div style="float:left;">2019春软件工程</div>
+        <div style="float:left;">北航计算机学院2019春软件工程</div>
         <div style="float:right;">应用版权所有@Flight-D小组</div>
     </div>
 

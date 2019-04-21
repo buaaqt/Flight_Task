@@ -14,7 +14,7 @@ def testdb(request):
 
     for var in list:
         data={}
-        data['id']=var.id
+        data['id']=str(var.id)
         data['departure']=var.departure
         data['arrival']=var.arrival
         data['dpt_airport']=var.dpt_airport
